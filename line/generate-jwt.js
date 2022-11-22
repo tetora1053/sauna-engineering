@@ -31,23 +31,19 @@ const privateKey = JSON.parse(fs.readFileSync("../ops/key-pair/private.key"));
 // キーIDを秘密鍵に追加
 privateKey.kid = kid;
 
-const header = `
-{
-    alg: "RS256",
-    typ: "JWT",
-    kid: "${kid}"
-}
-`;
+const header = {
+  alg: "RS256",
+  typ: "JWT",
+  kid: kid,
+};
 
-const payload = `
-{
-    iss: "${iss}",
-    sub: "${sub}",
-    aud: "https://api.line.me/",
-    exp: Math.floor(new Date().getTime() / 1000) + 60 * 30,
-    token_exp: 60 * 60 * 24 * 30
-}
-`;
+const payload = {
+  iss: iss,
+  sub: sub,
+  aud: "https://api.line.me/",
+  exp: Math.floor(new Date().getTime() / 1000) + 60 * 30,
+  token_exp: 60 * 60 * 24 * 30,
+};
 
 jose.JWS.createSign({ format: "compact", fields: header }, privateKey)
   .update(JSON.stringify(payload))

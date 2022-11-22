@@ -1,0 +1,17 @@
+{
+  "name": "line",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "generate-jwt.js",
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.215.0",
+    "node-jose": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

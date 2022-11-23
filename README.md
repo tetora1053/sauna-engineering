@@ -10,10 +10,10 @@
 - 画像ストレージ：Amazon S3
 - 画像解析：Amazon Rekognition
 - 画像解析実行トリガー：S3への保存
-- 解析結果の保存先：Amazon S3
+- 解析結果の保存先：Amazon S3 or Amazon DynamoDB
 - 通知プログラム実行基盤：AWS Lambda
 - 通知先：LINE
 - Lambdaランタイム：NodeJS
 - Lambdaスクリプト開発言語：TypeScript
 - 通知トリガー：解析結果の保存
-- インフラコード管理：AWS CDK
+- インフラコード管理：AWS CDK / AWS SAM
